@@ -6,23 +6,23 @@
 
 # sudo apt install nano tmux htop neofetch btop
 
-MY_WORKSPACE_DIR="derp"
-MY_ROM="https://github.com/DerpFest-AOSP/manifest.git"
-MY_ROM_BRANCH="15"
-MY_LOCAL_MANIFEST="15-derp"
+MY_WORKSPACE_DIR="yaap"
+MY_ROM="https://github.com/yaap/manifest.git"
+MY_ROM_BRANCH="fifteen"
+MY_LOCAL_MANIFEST="15-yaap"
 CUSTOMCLANG="r487747c"
 MY_EMAIL="singhsamarjeet2007@gmail.com"
 MY_USERNAME="DevInfinix"
-DIRKEYS="vendor/derp/signing/keys/"
-KEYS_BRANCH="15.0-derp"
+DIRKEYS="vendor/yaap/signing/keys/"
+KEYS_BRANCH="15.0-yaap"
 
-LUNCH_CMD=derp_ice-userdebug
-MAKE_CMD=derp
+LUNCH_CMD=yaap_ice-userdebug
+MAKE_CMD=yaap
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_COMPRESS=1
-MY_CCACHE_SIZE=40G
+MY_CCACHE_SIZE=10G
 
 export BUILD_USERNAME=DevInfinix
 export BUILD_HOSTNAME=Garudinix
@@ -111,4 +111,4 @@ echo "========================================================================"
 source build/envsetup.sh
 lunch $LUNCH_CMD
 make installclean
-mka $MAKE_CMD | tee build.log
+m $MAKE_CMD | tee build.log
