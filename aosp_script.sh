@@ -4,7 +4,7 @@
 
 ##################### USE TMUX #################################
 
-# sudo apt install nano tmux htop neofetch btop
+# sudo apt install nano tmux htop neofetch btop speedtest
 
 MY_WORKSPACE_DIR="yaap"
 MY_ROM="https://github.com/yaap/manifest.git"
@@ -36,7 +36,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 cd ~
 
-sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev neofetch htop tmux netcat
+sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev neofetch htop tmux netcat speedtest
 
 bash <(curl -s https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh)
 
