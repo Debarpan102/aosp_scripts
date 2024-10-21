@@ -6,6 +6,7 @@
 
 # sudo apt install nano tmux htop neofetch btop
 
+MY_ROOT_DIR="~"
 MY_WORKSPACE_DIR="derp"
 MY_ROM="https://github.com/DerpFest-AOSP/manifest.git"
 MY_ROM_BRANCH="15"
@@ -34,7 +35,7 @@ export BUILD_HOSTNAME=Garudinix
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-cd ~
+cd $MY_ROOT_DIR
 
 sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev neofetch htop tmux netcat
 
