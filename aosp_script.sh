@@ -112,4 +112,4 @@ echo "========================================================================"
 source build/envsetup.sh
 lunch $LUNCH_CMD
 make installclean
-mka $MAKE_CMD | tee build.log
+m DISABLE_STUB_VALIDATION=true $MAKE_CMD | tee build.log
