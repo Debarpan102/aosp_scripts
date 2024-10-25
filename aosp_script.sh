@@ -18,7 +18,7 @@ DIRKEYS="vendor/aosp/signing/keys"
 KEYS_BRANCH=" "
 
 LUNCH_CMD=droidx_ice-a2pa-userdebug
-MAKE_CMD=m bacon
+MAKE_CMD=bacon
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -112,4 +112,4 @@ echo "========================================================================"
 source build/envsetup.sh
 lunch $LUNCH_CMD
 make installclean
-m DISABLE_STUB_VALIDATION=true $MAKE_CMD | tee build.log
+m $MAKE_CMD | tee build.log
