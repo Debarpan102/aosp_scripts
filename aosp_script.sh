@@ -84,10 +84,10 @@ echo "========================================================================"
 ################################################################
 
 # Check if the directory exists
-#if [ -d "$DIRKEYS" ]; then
-#   echo "Directory $DIRKEYS exists. Deleting it..."
+if [ -d "$DIRKEYS" ]; then
+  echo "Directory $DIRKEYS exists. Deleting it..."
     rm -rf "$DIRKEYS"
-#   echo "Directory deleted."
+   echo "Directory deleted."
 #else
  #   echo "Directory $DIRKEYS does not exist. No need to delete."
 #fi
