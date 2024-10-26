@@ -109,7 +109,4 @@ echo "========================================================================"
 ######################### LUNCH ################################
 ################################################################
 
-source build/envsetup.sh
-lunch $LUNCH_CMD
-make installclean
-m $MAKE_CMD | tee build.log
+source build/envsetup.sh && lunch droidx_ice-ap2a-userdebug  && m bacon
