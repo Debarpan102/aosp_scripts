@@ -8,16 +8,16 @@
 
 MY_ROOT_DIR="~"
 MY_WORKSPACE_DIR="droidx"
-MY_ROM="https://github.com/DroidX-UI/manifest.git"
-MY_ROM_BRANCH="14_v3"
-MY_LOCAL_MANIFEST="14-droidx"
+MY_ROM="https://github.com/crdroidandroid/android.git"
+MY_ROM_BRANCH="14.0"
+MY_LOCAL_MANIFEST="14-cr"
 CUSTOMCLANG="r487747c"
 MY_EMAIL="debarpanhalder8@gmail.com"
 MY_USERNAME="Debarpan102"
-DIRKEYS="vendor/aosp/signing/keys"
+DIRKEYS="vendor/cr-priv/keys"
 KEYS_BRANCH=" "
 
-LUNCH_CMD=droidx_ice-a2pa-userdebug
+BRUNCH_CMD=brunch ice userdebug
 MAKE_CMD=bacon
 
 export USE_CCACHE=1
@@ -60,7 +60,7 @@ repo init -u $MY_ROM -b $MY_ROM_BRANCH --git-lfs
 
 git clone https://github.com/Debarpan102/android-aosp-local-manifests.git -b $MY_LOCAL_MANIFEST .repo/local_manifests
 
-repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+repo sync -c -j$(nproc --all)
 
 echo "========================================================================"
 echo "SYNCING FINISHED"
@@ -109,4 +109,4 @@ echo "========================================================================"
 ######################### LUNCH ################################
 ################################################################
 
-source build/envsetup.sh && lunch droidx_ice-ap2a-userdebug  && m bacon
+source build/envsetup.sh && $BRUNCH_CMD  && $MAKE_CMD
