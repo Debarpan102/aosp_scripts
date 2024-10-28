@@ -23,7 +23,7 @@ BRUNCH_CMD=brunch ice userdebug
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_COMPRESS=1
-MY_CCACHE_SIZE=40G
+MY_CCACHE_SIZE=25G
 
 export BUILD_USERNAME=Debarpan
 export BUILD_HOSTNAME=Linux
