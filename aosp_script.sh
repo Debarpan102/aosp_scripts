@@ -18,7 +18,7 @@ DIRKEYS="vendor/cr-priv/keys"
 KEYS_BRANCH=" "
 
 BRUNCH_CMD=brunch ice userdebug
-MAKE_CMD=bacon
+#MAKE_CMD=bacon
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -109,4 +109,4 @@ echo "========================================================================"
 ######################### LUNCH ################################
 ################################################################
 
-source build/envsetup.sh && $BRUNCH_CMD  && $MAKE_CMD
+source build/envsetup.sh && $BRUNCH_CMD 
