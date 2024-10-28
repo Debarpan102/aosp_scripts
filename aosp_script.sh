@@ -7,9 +7,9 @@
 # sudo apt install nano tmux htop neofetch btop
 
 MY_ROOT_DIR="~"
-MY_WORKSPACE_DIR="crDroid"
-MY_ROM="https://github.com/crdroidandroid/android.git"
-MY_ROM_BRANCH="14.0"
+MY_WORKSPACE_DIR="Lineage-21"
+MY_ROM="https://github.com/LineageOS/android.git"
+MY_ROM_BRANCH="lineage-21.0"
 MY_LOCAL_MANIFEST="14-cr"
 CUSTOMCLANG="r487747c"
 MY_EMAIL="debarpanhalder8@gmail.com"
