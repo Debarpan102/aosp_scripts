@@ -7,7 +7,7 @@
 # sudo apt install nano tmux htop neofetch btop
 
 MY_ROOT_DIR="~"
-MY_WORKSPACE_DIR="droidx"
+MY_WORKSPACE_DIR="crDroid"
 MY_ROM="https://github.com/crdroidandroid/android.git"
 MY_ROM_BRANCH="14.0"
 MY_LOCAL_MANIFEST="14-cr"
