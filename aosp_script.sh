@@ -7,14 +7,14 @@
 # sudo apt install nano tmux htop neofetch btop
 
 MY_ROOT_DIR="~"
-MY_WORKSPACE_DIR="crDroid"
-MY_ROM="https://github.com/crdroidandroid/android.git"
+MY_WORKSPACE_DIR="matrixx"
+MY_ROM="https://github.com/ProjectMatrixx/android.git"
 MY_ROM_BRANCH="14.0"
-MY_LOCAL_MANIFEST="14-cr"
+MY_LOCAL_MANIFEST="14-matrixx"
 CUSTOMCLANG="r487747c"
 MY_EMAIL="debarpanhalder8@gmail.com"
 MY_USERNAME="Debarpan102"
-DIRKEYS="vendor/cr-priv/keys"
+DIRKEYS="vendor/lineage-priv/keys"
 KEYS_BRANCH=" "
 
 BRUNCH_CMD=brunch ice userdebug
@@ -26,7 +26,7 @@ export CCACHE_COMPRESS=1
 MY_CCACHE_SIZE=40G
 
 export BUILD_USERNAME=Debarpan
-export BUILD_HOSTNAME=Linux
+export BUILD_HOSTNAME=Ubuntu
 
 
 ################################################################
@@ -60,7 +60,7 @@ repo init -u $MY_ROM -b $MY_ROM_BRANCH --git-lfs
 
 git clone https://github.com/Debarpan102/android-aosp-local-manifests.git -b $MY_LOCAL_MANIFEST .repo/local_manifests
 
-repo sync -c -j$(nproc --all)
+repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 echo "========================================================================"
 echo "SYNCING FINISHED"
@@ -109,4 +109,5 @@ echo "========================================================================"
 ######################### LUNCH ################################
 ################################################################
 
-source build/envsetup.sh && $BRUNCH_CMD 
+source build/envsetup.sh 
+brunch ice user
