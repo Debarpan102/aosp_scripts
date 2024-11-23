@@ -7,18 +7,18 @@
 # sudo apt install nano tmux htop neofetch btop
 
 MY_ROOT_DIR="~"
-MY_WORKSPACE_DIR="droidx"
-MY_ROM="https://github.com/DroidX-UI/manifest.git"
-MY_ROM_BRANCH="14_v3"
-MY_LOCAL_MANIFEST="14-droidx"
+MY_WORKSPACE_DIR="pixelstar"
+MY_ROM="https://github.com/Project-PixelStar/manifest.git"
+MY_ROM_BRANCH="14-qpr3"
+MY_LOCAL_MANIFEST="14-ps"
 CUSTOMCLANG="r487747c"
 MY_EMAIL="debarpanhalder8@gmail.com"
 MY_USERNAME="Debarpan102"
 DIRKEYS="vendor/aosp/signing/keys"
 KEYS_BRANCH=" "
 
-LUNCH_CMD=droidx_ice-a2pa-userdebug
-MAKE_CMD=bacon
+#LUNCH_CMD=droidx_ice-a2pa-userdebug
+#MAKE_CMD=bacon
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -109,4 +109,4 @@ echo "========================================================================"
 ######################### LUNCH ################################
 ################################################################
 
-source build/envsetup.sh && lunch droidx_ice-ap2a-userdebug  && m bacon
+#source build/envsetup.sh && lunch droidx_ice-ap2a-userdebug  && m bacon
