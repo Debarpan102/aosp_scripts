@@ -7,23 +7,23 @@
 # sudo apt install nano tmux htop neofetch btop
 
 MY_ROOT_DIR="~"
-MY_WORKSPACE_DIR="Lineage-21"
-MY_ROM="https://github.com/LineageOS/android.git"
-MY_ROM_BRANCH="lineage-21.0"
-MY_LOCAL_MANIFEST="14-cr"
-CUSTOMCLANG="r487747c"
+MY_WORKSPACE_DIR="pixelage"
+MY_ROM="https://github.com/ProjectPixelage/android_manifest.git"
+MY_ROM_BRANCH="15"
+MY_LOCAL_MANIFEST="15-pixelage"
+CUSTOMCLANG="r522817"
 MY_EMAIL="debarpanhalder8@gmail.com"
 MY_USERNAME="Debarpan102"
-DIRKEYS="vendor/lineage-priv/keys"
-KEYS_BRANCH=" "
+#DIRKEYS="vendor/lineage-priv/keys"
+#KEYS_BRANCH=" "
 
-BRUNCH_CMD=brunch ice userdebug
-MAKE_CMD=mka bacon
+#BRUNCH_CMD=brunch ice userdebug
+#MAKE_CMD=mka bacon
 
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_COMPRESS=1
-MY_CCACHE_SIZE=25G
+MY_CCACHE_SIZE=50G
 
 export BUILD_USERNAME=Debarpan
 export BUILD_HOSTNAME=Linux
@@ -34,6 +34,9 @@ export BUILD_HOSTNAME=Linux
 ################################################################
 
 sudo apt-get update && sudo apt-get upgrade -y
+sudo apt update && sudo apt install libc6-dev
+sudo apt install openssl libssl-dev && sudo apt install libssl-dev
+sudo apt-get install -y libfl-dev
 
 cd $MY_ROOT_DIR
 
@@ -72,7 +75,7 @@ echo "========================================================================"
 ################################################################
 
 rm -rf "prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}"
-git clone "https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-${CUSTOMCLANG}" --depth=1 -b 14.0 "prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}"
+git clone "https://gitlab.com/kei-space/clang/r522817.git" --depth=1 -b master "prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}"
 
 echo "========================================================================"
 echo "CLONED CUSTOM CLANG"
@@ -84,10 +87,10 @@ echo "========================================================================"
 ################################################################
 
 # Check if the directory exists
-if [ -d "$DIRKEYS" ]; then
-  echo "Directory $DIRKEYS exists. Deleting it..."
-    rm -rf "$DIRKEYS"
-   echo "Directory deleted."
+#if [ -d "$DIRKEYS" ]; then
+# echo "Directory $DIRKEYS exists. Deleting it..."
+#  rm -rf "$DIRKEYS"
+#  echo "Directory deleted."
 #else
  #   echo "Directory $DIRKEYS does not exist. No need to delete."
 #fi
@@ -96,7 +99,7 @@ if [ -d "$DIRKEYS" ]; then
 #git clone https://github.com/DevInfinix/devinfinix-aosp-roms-keys --depth=1 -b $KEYS_BRANCH "$DIRKEYS" **/
 
 echo "========================================================================"
-echo "CLONED KEYS"
+echo "NOT CLONED KEYS"
 echo "========================================================================"
 
 
@@ -109,4 +112,7 @@ echo "========================================================================"
 ######################### LUNCH ################################
 ################################################################
 
-source build/envsetup.sh && $BRUNCH_CMD && $MAKE_CMD
+export PIXELAGE_BUILD="ice"
+source build/envsetup.sh
+lunch pixelage_ice-ap4a-userdebug
+mka bacon -j96
